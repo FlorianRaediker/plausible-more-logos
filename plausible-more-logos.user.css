@@ -13,7 +13,7 @@
 @var select hideFilterText "Hide text in filter" ["all:All", "onlyValue:Only value*", "never:Never"]
 ==/UserStyle== */
 
-@-moz-document regexp("https://plausible.*") {
+@-moz-document regexp("https?://plausible.*") {
 
 if hideNames == "all" {
     .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href*="browser"]:not([href*="browser_version"]):not([href*="os_version"]),
