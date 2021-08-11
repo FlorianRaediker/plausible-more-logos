@@ -1,0 +1,101 @@
+/* ==UserStyle==
+@name        Plausible More Logos
+@description Adds logos (Browsers, OS) to Plausible Analytics dashboard
+@namespace   FlorianRaediker
+@version     1.0.0
+@author      Florian Rädiker
+@homepageURL https://github.com/FlorianRaediker/plausible-more-logos
+@license     MIT
+@updateURL   https://raw.githubusercontent.com/FlorianRaediker/plausible-more-logos/main/plausible-logos.user.css
+
+@preprocessor stylus
+@var select hideNames "Hide names" ["all:All", "onlyWithLogo:Only with logo*", "never:Never"]
+@var select hideFilterText "Hide text in filter" ["all:All", "onlyValue:Only value*", "never:Never"]
+==/UserStyle== */
+
+@-moz-document regexp("https://plausible.*") {
+
+if hideNames == "all" {
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href*="browser"]:not([href*="browser_version"]):not([href*="os_version"]),
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href*="os"]:not([href*="browser_version"]):not([href*="os_version"])
+    {
+        color: transparent;
+    }
+} else if hideNames == "onlyWithLogo" {
+    {% for type, name, _ in logos %}
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="{{ type }}={{ urlquote(name) }}"]{% if not loop.last%},{% endif %}
+    {%- endfor -%}
+    {
+        color: transparent;
+    }
+}
+
+.items-start:nth-child(5) .stats-item:last-child span:not([tooltip]) a.block[href*="browser"]:not([href*="browser_version"]):not([href*="os_version"])::before,
+.items-start:nth-child(5) .stats-item:last-child span:not([tooltip]) a.block[href*="os"]:not([href*="browser_version"]):not([href*="os_version"])::before,
+{%- for _, name, _ in logos -%}
+span[title="{{ name }}"] > span > b::before{% if not loop.last %},{% endif %}
+{% endfor -%}
+{
+    display: inline-block;
+    content: "";
+    vertical-align: -.21rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.45em;
+}
+
+if hideFilterText == "all" {
+    {% for _, name, _ in logos -%}
+    span[title="{{ name }}"] > span{% if not loop.last %},{% endif %}
+    {% endfor -%}
+    {
+        font-size: 0.0001em;
+        line-height: 1;
+        color: transparent;
+    }
+} else if hideFilterText == "onlyValue" {
+    {% for _, name, _ in logos -%}
+    span[title="{{ name }}"] > span > b{% if not loop.last %},{% endif %}
+    {% endfor -%}
+    {
+        font-size: 0.0001em;
+        line-height: 1;
+        color: transparent;
+    }
+}
+
+{%- for _, name, _ in logos -%}
+span[title="{{ name }}"] > span > b::before{% if not loop.last %},{% endif %}
+{% endfor -%}
+{
+    margin-left: 0.15em;
+    margin-right: 0.4em;
+}
+
+
+/* some icons are too small * /
+a.block[href$="browser=Safari"]::before
+{
+    background-size: 1.2rem !important;
+    background-position: -0.1rem -0.1rem !important;
+}*/
+
+{% for type, name, logo in logos %}
+{%- if logo|length != 2 -%}
+a.block[href$="{{ type }}={{ urlquote(name) }}"]::before, span[title="{{ name }}"] > span > b::before {
+    background-image: url('{{ logo }}');
+}
+{%- else -%}
+a.block[href$="{{ type }}={{ urlquote(name) }}"]::before, span[title="{{ name }}"] > span > b::before {
+    background-image: url('{{ logo[0] }}');
+}
+.dark a.block[href$="{{ type }}={{ urlquote(name) }}"]::before, .dark span[title="{{ name }}"] > span > b::before {
+    background-image: url('{{ logo[1] }}');
+}
+{%- endif %}
+{% endfor %}
+
+}

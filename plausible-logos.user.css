@@ -1,0 +1,246 @@
+/* ==UserStyle==
+@name        Plausible Logos
+@description Adds logos (Browsers, OS) to Plausible
+@namespace   FlorianRaediker
+@version     1.0.0
+@author      Florian Rädiker
+@homepageURL https://github.com/FlorianRaediker/plausible-logos
+@license     MIT
+@aaaaupdateURL   https://raw.githubusercontent.com/FlorianRaediker/true-github-dark/main/true-github-dark.user.css
+
+@preprocessor stylus
+@var select hideNames "Hide names" ["all:All", "onlyWithLogo:Only with logo*", "never:Never"]
+@var select hideFilterText "Hide text in filter" ["all:All", "onlyValue:Only value*", "never:Never"]
+==/UserStyle== */
+
+@-moz-document regexp("https://plausible.*") {
+
+if hideNames == "all" {
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href*="browser"]:not([href*="browser_version"]):not([href*="os_version"]),
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href*="os"]:not([href*="browser_version"]):not([href*="os_version"])
+    {
+        color: transparent;
+    }
+} else if hideNames == "onlyWithLogo" {
+    
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Chrome"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Chromium"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=DuckDuckGo+Privacy+Browser"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Ecosia"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Firefox"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Microsoft+Edge"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Mobile+App"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Opera"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Opera+Touch"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Pale+Moon"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Safari"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Samsung+Browser"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Waterfox"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="browser=Yandex+Browser"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Android"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Chrome+OS"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Fedora"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=GNU%2FLinux"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=iOS"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Mac"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Ubuntu"],
+    .items-start:nth-child(5) .stats-item:last-child div.items-center:not(:hover) span:not([tooltip]) a.block[href$="os=Windows"]{
+        color: transparent;
+    }
+}
+
+.items-start:nth-child(5) .stats-item:last-child span:not([tooltip]) a.block[href*="browser"]:not([href*="browser_version"]):not([href*="os_version"])::before,
+.items-start:nth-child(5) .stats-item:last-child span:not([tooltip]) a.block[href*="os"]:not([href*="browser_version"]):not([href*="os_version"])::before,span[title="Chrome"] > span > b::before,
+span[title="Chromium"] > span > b::before,
+span[title="DuckDuckGo Privacy Browser"] > span > b::before,
+span[title="Ecosia"] > span > b::before,
+span[title="Firefox"] > span > b::before,
+span[title="Microsoft Edge"] > span > b::before,
+span[title="Mobile App"] > span > b::before,
+span[title="Opera"] > span > b::before,
+span[title="Opera Touch"] > span > b::before,
+span[title="Pale Moon"] > span > b::before,
+span[title="Safari"] > span > b::before,
+span[title="Samsung Browser"] > span > b::before,
+span[title="Waterfox"] > span > b::before,
+span[title="Yandex Browser"] > span > b::before,
+span[title="Android"] > span > b::before,
+span[title="Chrome OS"] > span > b::before,
+span[title="Fedora"] > span > b::before,
+span[title="GNU/Linux"] > span > b::before,
+span[title="iOS"] > span > b::before,
+span[title="Mac"] > span > b::before,
+span[title="Ubuntu"] > span > b::before,
+span[title="Windows"] > span > b::before
+{
+    display: inline-block;
+    content: "";
+    vertical-align: -.21rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.45em;
+}
+
+if hideFilterText == "all" {
+    span[title="Chrome"] > span,
+    span[title="Chromium"] > span,
+    span[title="DuckDuckGo Privacy Browser"] > span,
+    span[title="Ecosia"] > span,
+    span[title="Firefox"] > span,
+    span[title="Microsoft Edge"] > span,
+    span[title="Mobile App"] > span,
+    span[title="Opera"] > span,
+    span[title="Opera Touch"] > span,
+    span[title="Pale Moon"] > span,
+    span[title="Safari"] > span,
+    span[title="Samsung Browser"] > span,
+    span[title="Waterfox"] > span,
+    span[title="Yandex Browser"] > span,
+    span[title="Android"] > span,
+    span[title="Chrome OS"] > span,
+    span[title="Fedora"] > span,
+    span[title="GNU/Linux"] > span,
+    span[title="iOS"] > span,
+    span[title="Mac"] > span,
+    span[title="Ubuntu"] > span,
+    span[title="Windows"] > span
+    {
+        font-size: 0.0001em;
+        line-height: 1;
+        color: transparent;
+    }
+} else if hideFilterText == "onlyValue" {
+    span[title="Chrome"] > span > b,
+    span[title="Chromium"] > span > b,
+    span[title="DuckDuckGo Privacy Browser"] > span > b,
+    span[title="Ecosia"] > span > b,
+    span[title="Firefox"] > span > b,
+    span[title="Microsoft Edge"] > span > b,
+    span[title="Mobile App"] > span > b,
+    span[title="Opera"] > span > b,
+    span[title="Opera Touch"] > span > b,
+    span[title="Pale Moon"] > span > b,
+    span[title="Safari"] > span > b,
+    span[title="Samsung Browser"] > span > b,
+    span[title="Waterfox"] > span > b,
+    span[title="Yandex Browser"] > span > b,
+    span[title="Android"] > span > b,
+    span[title="Chrome OS"] > span > b,
+    span[title="Fedora"] > span > b,
+    span[title="GNU/Linux"] > span > b,
+    span[title="iOS"] > span > b,
+    span[title="Mac"] > span > b,
+    span[title="Ubuntu"] > span > b,
+    span[title="Windows"] > span > b
+    {
+        font-size: 0.0001em;
+        line-height: 1;
+        color: transparent;
+    }
+}span[title="Chrome"] > span > b::before,
+span[title="Chromium"] > span > b::before,
+span[title="DuckDuckGo Privacy Browser"] > span > b::before,
+span[title="Ecosia"] > span > b::before,
+span[title="Firefox"] > span > b::before,
+span[title="Microsoft Edge"] > span > b::before,
+span[title="Mobile App"] > span > b::before,
+span[title="Opera"] > span > b::before,
+span[title="Opera Touch"] > span > b::before,
+span[title="Pale Moon"] > span > b::before,
+span[title="Safari"] > span > b::before,
+span[title="Samsung Browser"] > span > b::before,
+span[title="Waterfox"] > span > b::before,
+span[title="Yandex Browser"] > span > b::before,
+span[title="Android"] > span > b::before,
+span[title="Chrome OS"] > span > b::before,
+span[title="Fedora"] > span > b::before,
+span[title="GNU/Linux"] > span > b::before,
+span[title="iOS"] > span > b::before,
+span[title="Mac"] > span > b::before,
+span[title="Ubuntu"] > span > b::before,
+span[title="Windows"] > span > b::before
+{
+    margin-left: 0.15em;
+    margin-right: 0.4em;
+}
+
+
+/* some icons are too small * /
+a.block[href$="browser=Safari"]::before
+{
+    background-size: 1.2rem !important;
+    background-position: -0.1rem -0.1rem !important;
+}*/
+
+a.block[href$="browser=Chrome"]::before, span[title="Chrome"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg');
+}
+a.block[href$="browser=Chromium"]::before, span[title="Chromium"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/chromium/chromium.svg');
+}
+a.block[href$="browser=DuckDuckGo+Privacy+Browser"]::before, span[title="DuckDuckGo Privacy Browser"] > span > b::before {
+    background-image: url('https://icons.duckduckgo.com/ip3/spreadprivacy.com.ico');
+}
+a.block[href$="browser=Ecosia"]::before, span[title="Ecosia"] > span > b::before {
+    background-image: url('https://cdn-static.ecosia.org/assets/images/ico/favicon.ico');
+}
+a.block[href$="browser=Firefox"]::before, span[title="Firefox"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox.svg');
+}
+a.block[href$="browser=Microsoft+Edge"]::before, span[title="Microsoft Edge"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg');
+}
+a.block[href$="browser=Mobile+App"]::before, span[title="Mobile App"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/android-webview/android-webview.png');
+}
+a.block[href$="browser=Opera"]::before, span[title="Opera"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera.svg');
+}
+a.block[href$="browser=Opera+Touch"]::before, span[title="Opera Touch"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera-touch/opera-touch.png');
+}
+a.block[href$="browser=Pale+Moon"]::before, span[title="Pale Moon"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/pale-moon/pale-moon.png');
+}
+a.block[href$="browser=Safari"]::before, span[title="Safari"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari-ios/safari-ios.svg');
+}
+a.block[href$="browser=Samsung+Browser"]::before, span[title="Samsung Browser"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/samsung-internet/samsung-internet.svg');
+}
+a.block[href$="browser=Waterfox"]::before, span[title="Waterfox"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/b/b5/Waterfox_Logo_June_2019.png');
+}
+a.block[href$="browser=Yandex+Browser"]::before, span[title="Yandex Browser"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/yandex/yandex.png');
+}
+a.block[href$="os=Android"]::before, span[title="Android"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Android_robot_head.svg');
+}
+a.block[href$="os=Chrome+OS"]::before, span[title="Chrome OS"] > span > b::before {
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/chrome/chrome.svg');
+}
+a.block[href$="os=Fedora"]::before, span[title="Fedora"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/41/Fedora_icon_%282021%29.svg');
+}
+a.block[href$="os=GNU%2FLinux"]::before, span[title="GNU/Linux"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg');
+}
+a.block[href$="os=iOS"]::before, span[title="iOS"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/63/IOS_wordmark_%282017%29.svg');
+}
+a.block[href$="os=Mac"]::before, span[title="Mac"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/21/MacOS_wordmark_%282017%29.svg');
+}
+a.block[href$="os=Ubuntu"]::before, span[title="Ubuntu"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo-ubuntu_cof-orange-hex.svg');
+}
+a.block[href$="os=Windows"]::before, span[title="Windows"] > span > b::before {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg');
+}
+
+
+}
