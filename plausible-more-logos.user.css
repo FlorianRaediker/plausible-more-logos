@@ -194,16 +194,16 @@ a.block[href$="browser=Microsoft+Edge"]::before, span[title="Microsoft Edge"] > 
     background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg');
 }
 a.block[href$="browser=Mobile+App"]::before, span[title="Mobile App"] > span > b::before {
-    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/android-webview/android-webview.png');
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/android-webview/android-webview_64x64.png');
 }
 a.block[href$="browser=Opera"]::before, span[title="Opera"] > span > b::before {
     background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera.svg');
 }
 a.block[href$="browser=Opera+Touch"]::before, span[title="Opera Touch"] > span > b::before {
-    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera-touch/opera-touch.png');
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera-touch/opera-touch_64x64.png');
 }
 a.block[href$="browser=Pale+Moon"]::before, span[title="Pale Moon"] > span > b::before {
-    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/pale-moon/pale-moon.png');
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/pale-moon/pale-moon_64x64.png');
 }
 a.block[href$="browser=Safari"]::before, span[title="Safari"] > span > b::before {
     background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/safari-ios/safari-ios.svg');
@@ -215,7 +215,7 @@ a.block[href$="browser=Waterfox"]::before, span[title="Waterfox"] > span > b::be
     background-image: url('https://upload.wikimedia.org/wikipedia/en/b/b5/Waterfox_Logo_June_2019.png');
 }
 a.block[href$="browser=Yandex+Browser"]::before, span[title="Yandex Browser"] > span > b::before {
-    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/yandex/yandex.png');
+    background-image: url('https://raw.githubusercontent.com/alrra/browser-logos/main/src/yandex/yandex_64x64.png');
 }
 a.block[href$="os=Android"]::before, span[title="Android"] > span > b::before {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Android_robot_head.svg');
