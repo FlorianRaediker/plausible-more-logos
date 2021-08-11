@@ -12,4 +12,4 @@ Logos are fetched from [github.com/alrra/browser-logos](https://raw.githubuserco
 
 # Screenshots
 <img src="docs/screenshot-browser.png" width="49%">
-<img src="docs/screenshot-os.png" width="49%>
+<img src="docs/screenshot-os.png" width="49%">
