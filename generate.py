@@ -51,6 +51,6 @@ LOGOS = [
 ]
 
 
-with open("plausible-logos.user.css.jinja2", "r") as t, open("plausible-logos.user.css", "w") as f:
+with open("plausible-more-logos.user.css.jinja2", "r") as t, open("plausible-more-logos.user.css", "w") as f:
     template = jinja2.Template(t.read())
     f.write(template.render(logos=LOGOS, urlquote=lambda u: urllib.parse.quote(u.replace(" ", "+"), safe="+")))

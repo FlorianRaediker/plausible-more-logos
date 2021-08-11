@@ -1,12 +1,12 @@
 /* ==UserStyle==
-@name        Plausible Logos
-@description Adds logos (Browsers, OS) to Plausible
+@name        Plausible More Logos
+@description Adds browser and OS logos to Plausible Analytics's dashboard
 @namespace   FlorianRaediker
 @version     1.0.0
 @author      Florian Rädiker
-@homepageURL https://github.com/FlorianRaediker/plausible-logos
+@homepageURL https://github.com/FlorianRaediker/plausible-more-logos
 @license     MIT
-@aaaaupdateURL   https://raw.githubusercontent.com/FlorianRaediker/true-github-dark/main/true-github-dark.user.css
+@updateURL   https://raw.githubusercontent.com/FlorianRaediker/plausible-more-logos/main/plausible-logos.user.css
 
 @preprocessor stylus
 @var select hideNames "Hide names" ["all:All", "onlyWithLogo:Only with logo*", "never:Never"]
