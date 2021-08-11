@@ -8,7 +8,7 @@ Logos are fetched from [github.com/alrra/browser-logos](https://raw.githubuserco
 
 # Installation
  1. Install Stylus Browser Extension ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/styl-us/), [Chromium-based](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne), [Opera](https://addons.opera.com/extensions/details/stylus/)).
- 2. Install [plausible-logos.user.css](https://github.com/FlorianRaediker/plausible-more-logos/raw/main/plausible-logos.user.css).
+ 2. Install [plausible-more-logos.user.css](https://github.com/FlorianRaediker/plausible-more-logos/raw/main/plausible-more-logos.user.css).
 
 # Screenshots
 <img src="docs/screenshot-browser.png" width="49%">
