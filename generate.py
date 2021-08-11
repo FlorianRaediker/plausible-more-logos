@@ -1,4 +1,5 @@
 import base64
+import json
 import urllib.parse
 
 import jinja2
@@ -30,6 +31,7 @@ LOGOS = [
     ("browser", "DuckDuckGo Privacy Browser", "https://icons.duckduckgo.com/ip3/spreadprivacy.com.ico"),
     ("browser", "Ecosia", "https://cdn-static.ecosia.org/assets/images/ico/favicon.ico"),
     ("browser", "Firefox", "https://raw.githubusercontent.com/alrra/browser-logos/main/src/firefox/firefox.svg"),
+    ("browser", "Internet Explorer", "https://raw.githubusercontent.com/alrra/browser-logos/main/src/archive/internet-explorer_9-11/internet-explorer_9-11_64x64.png"),
     ("browser", "Microsoft Edge", "https://raw.githubusercontent.com/alrra/browser-logos/main/src/edge/edge.svg"),
     ("browser", "Mobile App", "https://raw.githubusercontent.com/alrra/browser-logos/main/src/android-webview/android-webview_64x64.png"),
     ("browser", "Opera", "https://raw.githubusercontent.com/alrra/browser-logos/main/src/opera/opera.svg"),
@@ -50,7 +52,9 @@ LOGOS = [
     ("os", "Windows", "https://upload.wikimedia.org/wikipedia/commons/8/87/Windows_logo_-_2021.svg"),
 ]
 
+with open("flags.json", "r") as f:
+    flags = json.load(f).items()
 
 with open("plausible-more-logos.user.css.jinja2", "r") as t, open("plausible-more-logos.user.css", "w") as f:
     template = jinja2.Template(t.read())
-    f.write(template.render(logos=LOGOS, urlquote=lambda u: urllib.parse.quote(u.replace(" ", "+"), safe="+")))
+    f.write(template.render(logos=LOGOS, flags=flags, urlquote=lambda u: urllib.parse.quote(u.replace(" ", "+"), safe="+")))

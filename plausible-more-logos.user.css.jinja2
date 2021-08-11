@@ -75,14 +75,6 @@ span[title="{{ name }}"] > span > b::before{% if not loop.last %},{% endif %}
     margin-right: 0.4em;
 }
 
-
-/* some icons are too small * /
-a.block[href$="browser=Safari"]::before
-{
-    background-size: 1.2rem !important;
-    background-position: -0.1rem -0.1rem !important;
-}*/
-
 {% for type, name, logo in logos %}
 {%- if logo|length != 2 -%}
 a.block[href$="{{ type }}={{ urlquote(name) }}"]::before, span[title="{{ name }}"] > span > b::before {
